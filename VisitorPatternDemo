@@ -1,0 +1,17 @@
+package com.visitorpattern;
+
+public class VisitorPatternDemo {
+    public static void main(String[] args) {
+        ComputerPart computer = new Computer();
+        ComputerPart keyboard = new Keyboard();
+        ComputerPart monitor = new Monitor();
+        ComputerPart mouse = new Mouse();
+
+        ComputerPartVisitor computerPartVisitor = new ComputerPartDisplayVisitor();
+
+        computer.accept(computerPartVisitor);
+        keyboard.accept(computerPartVisitor);
+        monitor.accept(computerPartVisitor);
+        mouse.accept(computerPartVisitor);
+    }
+}
